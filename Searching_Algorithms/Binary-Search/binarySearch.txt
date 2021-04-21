@@ -1,0 +1,5 @@
+-Binary search is much faster form of search
+-Rather than eliminating one element at a time, you can eliminate half of the remaning
+elements at a time.
+-Binary search only works on sorted arrays.
+

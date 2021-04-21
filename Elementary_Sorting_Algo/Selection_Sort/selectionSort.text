@@ -1,0 +1,20 @@
+Similar to bubble sort, but instead of first placing large values into sorted
+position, it places small values into sorted position.
+
+You set a temp min value and you compare it with the other values.
+If another value is less than the current min you swap values.
+Then you repeat the process with then new temp min to see if there is another
+smaller value
+
+[9, 10, 3, 4, 1, 2]
+tempMin = 9;
+9 is smaller than 10 so no swap
+9 is larger than 3 so we swap
+
+
+
+
+
+
+
+

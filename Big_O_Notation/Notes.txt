@@ -1,0 +1,17 @@
+--Time Complexity
+
+-Number of operations in the code is how you determine how fast you code is.
+-Loops will have a lot of operations depending on how many times the code needs to loop.
+-Big-O Notation is a way to formalize fuzzy counting
+-It allows us to talk formally about runtime of an algorithm grows as the inputs grow
+
+*O(1) - no matter the value of n the operation stay the same/linear time
+*O(n) - runtime scales to the value of n
+*O(n2) - runtime scales exceptionally to the value of n ex: nested loops
+
+--Space Complexity
+-Amount of memory that is being taken up
+
+--LOGARITHMS
+-The inverse of exponential
+O(log n) is better than O(n) and is slightly worst than O(1);

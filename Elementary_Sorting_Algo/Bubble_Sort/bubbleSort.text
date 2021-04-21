@@ -1,0 +1,31 @@
+"Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm
+that works by repeatedly stepping through the list to be sorted, comparing each
+pair of adjacent items and swapping them if they are in the wrong order".
+
+Bubble sort is a simple algorithm for sorting, but it’s also quite inefficient,
+as its worst case is O(n^2) complexity.
+We loop through an array, and we keep comparing one item to the one right next to it.
+If the item on the right is smaller, we swap the two positions.
+
+const bubbleSort = (originalArray) => {
+  let swapped = false
+
+  const a = [...originalArray]
+
+  for (let i = 1; i < a.length - 1; i++) {
+    swapped = false
+
+    for (let j = 0; j < a.length - i; j++) {
+      if (a[j + 1] < a[j]) {
+        ;[a[j], a[j + 1]] = [a[j + 1], a[j]]
+        swapped = true
+      }
+    }
+
+    if (!swapped) {
+      return a
+    }
+  }
+
+  return a
+}

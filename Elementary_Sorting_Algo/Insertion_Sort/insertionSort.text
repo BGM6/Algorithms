@@ -1,0 +1,26 @@
+Insertion sort runs in O(n^2) or quadratic time in the worst case.
+It can outperform more advance algorithms like quick sort or merge sort on smaller arrays/list
+
+Insertion sort compares each value of the array one at at time and placing the values in order
+
+The idea behind Insertion Sort is often compared to the way people sort a hand of cards while
+playing Rummy.
+
+In this card game, the dealer deals out cards to each player. Then, the players take the cards
+given to them one by one, sorting them in their hand in ascending order by inserting each card in its place
+
+function insertionSort(inputArr) {
+    let n = inputArr.length;
+        for (let i = 1; i < n; i++) {
+            // Choosing the first element in our unsorted subarray
+            let current = inputArr[i];
+            // The last element of our sorted subarray
+            let j = i-1;
+            while ((j > -1) && (current < inputArr[j])) {
+                inputArr[j+1] = inputArr[j];
+                j--;
+            }
+            inputArr[j+1] = current;
+        }
+    return inputArr;
+}
