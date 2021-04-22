@@ -113,7 +113,6 @@ bekhaMarried.family.push('Hayden');
 console.log(bekhaMarried);
 console.log(bekha);
 
-
 const jonas = {
     firstName: 'Jonas',
     year: 1991,
