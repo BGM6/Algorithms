@@ -34,3 +34,5 @@ let employeeDetailsDuplicateTwo = {
     age: employeeDetailsOriginal.age,
     Profession: employeeDetailsOriginal.Profession
 }; //Deep copy!
+
+//SOURCE https://blog.alexdevero.com/shallow-deep-copy-in-javascript/

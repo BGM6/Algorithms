@@ -14,6 +14,8 @@ const restaurant = {
             `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
         );
     },
+
+
 };
 
 const arr = [4, 5, 6];
