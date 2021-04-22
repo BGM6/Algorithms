@@ -34,4 +34,3 @@ function insertionSort(arr) {
 }
 
 console.log(insertionSort([14, 33, 27, 10, 35, 19, 42, 44]));
-                            j    i

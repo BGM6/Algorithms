@@ -8,7 +8,13 @@ const restaurant = {
 
     order: function (starterIndex, mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-    }
+    },
+
+    orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+        console.log(
+            `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+        );
+    },
 };
 //DESTRUCTURING ARRAYS
 const arr = [2, 4, 6];
