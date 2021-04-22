@@ -51,3 +51,5 @@ const insertionSort = (nums) => {
 
 const res = insertionSort([14, 33, 27, 10, 35, 19, 42, 44]);
 console.log(res)
+
+//https://medium.com/dailyjs/insertion-sort-in-javascript-9c077844717a
