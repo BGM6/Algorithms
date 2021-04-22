@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 // const insertionSort = arr => {
 //   for (let i = 0; i < arr.length; i++) {
 // 	let currentVal = arr[i];
@@ -13,24 +13,41 @@
 //
 // console.log(insertionSort([14, 33, 27, 10, 35, 19, 42, 44]));
 
-function insertionSort(arr) {
-  //We start at index 1 of the array
-  for (let i = 1; i < arr.length; i++) {
-	//Create a variable equal to arr[i]
-	let val = arr[i];
-	//define j to be the index before i;
-	//first iteration j is at 0 and i is at 1
-	let j = i - 1;
-	//While loop if the condition to continue
-	//as long as j is >= 0 and arr[j] is > than val
-	while (j >= 0 && arr[j] > val) {
-	  arr[j + 1] = arr[j];
-	  j = j - 1;
-	}
-	arr[j + 1] = val;
+// function insertionSort(arr) {
+//   for (let i = 1; i < arr.length; i++) {
+// 	let val = arr[i];
+//
+// 	let j = i - 1;
+// 	while (j >= 0 && arr[j] > val) {
+// 	  arr[j + 1] = arr[j];
+// 	  j = j - 1;
+// 	}
+// 	arr[j + 1] = val;
+//   }
+//   return arr;
+// }
+// insertionSort([14, 33, 27, 10, 35, 19, 42, 44]);
 
-  }
-  return arr;
+/*
+first iteration
+arr[j] 14 val 33 is 14 > 33 no
+while loop does not run
+we set arr[j + 1] = val so 0 + 1 = 1 arr[index 1] = val val is 33
+
+*/
+
+const insertionSort = (nums) => {
+	for (let i = 1; i < nums.length; i++) {
+		let j = i - 1
+		let tmp = nums[i]
+		while (j >= 0 && nums[j] > tmp) {
+			nums[j + 1] = nums[j]
+			j--
+		}
+		nums[j+1] = tmp
+	}
+	return nums
 }
 
-console.log(insertionSort([14, 33, 27, 10, 35, 19, 42, 44]));
+const res = insertionSort([14, 33, 27, 10, 35, 19, 42, 44]);
+console.log(res)
