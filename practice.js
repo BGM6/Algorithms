@@ -1,22 +1,22 @@
 'use strict';
 
-const insertionSort = arr => {
-  for (let i = 1; i < arr.length; i++) {
-    let j;
-    //Remember this currentVal is always re assign when it re loops
-	let currentVal = arr[i];
-	//this loops backwards!
-	for ( j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
-	  arr[j + 1] = arr[j];
-
-	}
-	//insert the num
-	arr[j + 1] = currentVal;
-  }
-  return arr;
-};
-
-console.log(insertionSort([2,1,9,76,4]));
+// const insertionSort = arr => {
+//   for (let i = 1; i < arr.length; i++) {
+//     let j;
+//     //Remember this currentVal is always re assign when it re loops
+// 	let currentVal = arr[i];
+// 	//this loops backwards!
+// 	for ( j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+// 	  arr[j + 1] = arr[j];
+//
+// 	}
+// 	//insert the num
+// 	arr[j + 1] = currentVal;
+//   }
+//   return arr;
+// };
+//
+// console.log(insertionSort([2,1,9,76,4]));
 /*
 Loop through the arr like normal
 we declare j as a variable
@@ -69,3 +69,24 @@ we set arr[j + 1] = val so 0 + 1 = 1 arr[index 1] = val val is 33
 // console.log(res)
 
 //https://medium.com/dailyjs/insertion-sort-in-javascript-9c077844717a
+
+// const niko = {
+//     firstName: 'Niko',
+//     lastName: 'Guilas',
+//     birthYear: 2013,
+//     color: ['black', 'white'],
+//
+//     calcAge: function () {
+//         console.log(`${this.firstName} is ${2021 - this.birthYear} years old.`);
+//
+//         const isGenZ = () => {
+//             console.log(this);
+//             console.log(this.birthYear >= 1997 && this.birthYear <= 2015);
+//         };
+//         isGenZ();
+//     },
+// };
+//
+// niko.calcAge();
+
+
