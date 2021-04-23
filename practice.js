@@ -35,5 +35,10 @@ function sumRange(num) {
     if (num === 1) return 1;
     return num * sumRange(num - 1);
 }
-console.log(sumRange(3))
 
+console.log(sumRange(3));
+
+const greetings = ['hi', 'hello', 'hey', 'yo'];
+for (const [idx, str] of greetings.entries()) {
+    console.log(`${idx + 1}: ${str}`);
+}

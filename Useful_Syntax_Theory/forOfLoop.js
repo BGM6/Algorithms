@@ -20,7 +20,7 @@ const restaurant = {
         },
     },
 };
-
+//USING ENTRIES() to pull out index
 const list = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const [index, item] of list.entries()) {
     console.log(`${index + 1}: ${item}`);
