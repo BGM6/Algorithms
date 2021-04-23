@@ -22,4 +22,11 @@ function factorial(num) {
     return num * factorial(num - 1);
 }
 
-console.log(factorial(3));
+// console.log(factorial(3));
+let numsArr = [34, 1, 88, 44, 3, 5, 2, 1000];
+
+function sortArr(num1, num2) {
+    return num1 - num2;
+}
+
+console.log(numsArr.sort(sortArr));
