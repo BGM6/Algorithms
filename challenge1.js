@@ -68,11 +68,11 @@ const game = {
         team2: 6.5,
     },
 };
-
+//1
 const [players1, players2] = game.players;
+//2
 const [gk, ...fieldPlayers] = players1;
+//3
+const allPlayers = [...players1, ...players2];
 
-
-
-// ['goal keeprs name', [all other players]]
 
