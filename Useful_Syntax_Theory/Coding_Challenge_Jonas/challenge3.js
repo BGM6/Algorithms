@@ -30,12 +30,15 @@ const gameEvents = new Map([
 
 //     1. Create an array 'events' of the different game events that happened (no
 // duplicates)
-const setEvents = new Set([...gameEvents]);
-let arr = [];
-for (const [key, value] of setEvents) {
-    arr.push(value);
-}
-const event = new Set(arr);
+// const setEvents = new Set([...gameEvents]);
+// let arr = [];
+// for (const [key, value] of setEvents) {
+//     arr.push(value);
+// }
+// const event = new Set(arr);
+//FASTER WAY THE JONAS WAY
+const events = [...new Set(gameEvents.values())]
+console.log(events)
 // console.log(event);
 // 2. After the game has finished, is was found that the yellow card from minute 64
 // was unfair. So remove this event from the game events log.
