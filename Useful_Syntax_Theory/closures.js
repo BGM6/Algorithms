@@ -52,3 +52,12 @@ const boardPassengers = function (n, wait) {
 
 boardPassengers(180, 3);
 
+//Function Closure
+const greeting = (str) => {
+    return function (name) {
+        console.log(`${str} there ${name}!`)
+    }
+}
+const greetFn = greeting('Hi')
+greetFn('Emerson')
+// greeting('Hello')('Hayden')

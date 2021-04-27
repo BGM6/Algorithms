@@ -1,44 +1,16 @@
 'use strict';
-/*
-Write a functional factorial which accepts a number and returns the factorial
-of that number. A factorial is the product of an integer and all the integers
-*/
-// function factorial(num) {
-//   let total = 1;
-//   for(let i = num; i > 0; i--) {
-//     total *= i;
-//   }
-//   return total;
-// }
-//
-// console.log(factorial(3))
+//str = 'heLLo woRLD'
+//lowercase it then capitalize the first using higher order functions
 
-function factorial(num) {
-    //Termination
-    if (num <= 0) return;
-    //Base case
-    if (num === 1) return num;
-    //recursion
-    return num * factorial(num - 1);
-}
+const lowerCaseStr = function (str) {
+    return str.toLowerCase();
+};
+const capitalizeFirst = function (str) {
+    let lower = lowerCaseStr(str);
+    console.log(lower.replace(lower[0], lower[0].toUpperCase()));
 
-// console.log(factorial(3));
-let numsArr = [34, 1, 88, 44, 3, 5, 2, 1000];
 
-function sortArr(num1, num2) {
-    return num1 - num2;
-}
+};
 
-console.log(numsArr.sort(sortArr));
 
-function sumRange(num) {
-    if (num === 1) return 1;
-    return num * sumRange(num - 1);
-}
-
-console.log(sumRange(3));
-
-const greetings = ['hi', 'hello', 'hey', 'yo'];
-for (const [idx, str] of greetings.entries()) {
-    console.log(`${idx + 1}: ${str}`);
-}
+capitalizeFirst('heLLo woRLD');
