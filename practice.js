@@ -2,15 +2,11 @@
 //str = 'heLLo woRLD'
 //lowercase it then capitalize the first using higher order functions
 
-const lowerCaseStr = function (str) {
-    return str.toLowerCase();
-};
-const capitalizeFirst = function (str) {
-    let lower = lowerCaseStr(str);
-    console.log(lower.replace(lower[0], lower[0].toUpperCase()));
-
-
+const greet = (greeting) => {
+    return function (name) {
+        console.log(`${greeting} ${name}`);
+    };
 };
 
+greet('Hello')('Hayden');
 
-capitalizeFirst('heLLo woRLD');
