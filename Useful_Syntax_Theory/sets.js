@@ -1,14 +1,14 @@
 //SETS
 //Order of sets does not matter andy values must be unique, can not have duplicates
 const orderSet = new Set([
-    'Pizza',
-    'Pasta',
-    'Pasta',
-    'Pizza',
-    'Spam',
-    'Hamburger',
-    'Hamburger',
-    'Risotto'
+  'Pizza',
+  'Pasta',
+  'Pasta',
+  'Pizza',
+  'Spam',
+  'Hamburger',
+  'Hamburger',
+  'Risotto'
 ]);
 console.log(orderSet);
 
@@ -31,7 +31,7 @@ console.log(orderSet);
 
 //Sets are also iterable
 for (const order of orderSet) {
-    console.log(order);
+  console.log(order);
 }
 
 //Example of use case of Sets
@@ -43,3 +43,4 @@ const uniqueStaff = [...new Set(staff)];
 console.log(uniqueStaff);
 // const uniqueArr = [...uniqueStaff];
 // console.log(uniqueArr);
+
