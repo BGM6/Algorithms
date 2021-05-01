@@ -1,22 +1,17 @@
 'use strict';
 
-<<<<<<< HEAD
-function createPhoneNumber(arr) {
-  let template = '(xxx) xxx-xxxx';
-  for (let n of arr) {
-    template = template.replace('x', n)
-  }
-  console.log(template);
-}
+// function solve(str, k) {
+//     let result = [];
+//     for (let i = 1; i <= k; i++) {
+//         result.push(str);
+//     }
+//     return result;
+// }
 
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 9]));
-=======
-const greet = (greeting) => {
-    return function (name) {
-        console.log(`${greeting} ${name}`);
-    };
+
+const solve = (strArg, k) => {
+    return Array(k).fill(strArg);
 };
+const res = solve('abc', 5);
+console.log(res);
 
-greet('Hello')('Hayden');
-
->>>>>>> 3715493e186e4b6eebd2e3339c001b97f2e554c2
