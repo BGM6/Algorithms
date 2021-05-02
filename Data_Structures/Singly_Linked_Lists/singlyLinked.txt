@@ -1,0 +1,5 @@
+What is a Singly linked list?
+Its a Data structure, It stores whatever data you want. Strings, number, it doesn't matter. It's ordered.
+Singly Linked List does not have index, no index to access each element or node. What is has is a head, tail and length property.
+Singly Linked Lists consist of nodes, and each node has a value and a pointer to another node or null.
+Singly LInked Lists only has one pointer that points to the next node.

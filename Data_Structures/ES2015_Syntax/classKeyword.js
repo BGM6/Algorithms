@@ -53,7 +53,7 @@ class Student {
 let firstStudent = new Student('Colt', 'Steele', 1);
 let secondStudent = new Student('Blue', 'Steele', 2);
 
-//Class Method
+//Using Static Methods
 class Point {
     constructor(x, y) {
         this.x = x;
