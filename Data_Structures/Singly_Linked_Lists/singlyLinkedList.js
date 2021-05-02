@@ -60,13 +60,54 @@ class SinglyLinkedList {
 //return current;
         return current;
     }
+
+    //SHIFT METHOD REMOVING NODE FROM THE HEAD
+    shift() {
+        //if there is no nodes return undefined;
+        if (!this.head) return undefined;
+        //store the current head property in a variable
+        let currentHead = this.head;
+        //set the head property to be the current head's next property
+        this.head = currentHead.next;
+        //decrement hte length by 1
+        this.length--;
+        //check if the length is === 0 then set the tail to null;
+        if (this.length === 0) {
+            this.tail = null;
+        }
+        //return the value of the node removed;
+        return currentHead;
+    }
+
+    //UNSHIFT INSERTING NODE TO THE HEAD
+    //This function should accept a value
+    unshift(val) {
+        //Create a new node using the value passed to the function
+        let newNode = new Node(val);
+        //If there is no head property on the list, set the head and tail to be the newly created node
+        //the head needs to be the newNode and tail needs to be the head;
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = this.head;
+        }
+        //Otherwise set the newly created node's next property to be the current head property on the list
+        newNode.next = this.head;
+        //Set the head property on the list to be the newly created node
+        this.head = newNode;
+        //Increment the length of the list by 1
+        this.length++;
+        //return the linked list
+        return this;
+    }
 }
 
 let list = new SinglyLinkedList();
 list.push('firstNode');
 list.push('secNode');
-list.push('thirdNode');
-list.pop();
+list.shift();
+// list.push('thirdNode');
+// list.pop();
+// list.pop();
 console.log(list);
 
 //Not ideal way of doing this
