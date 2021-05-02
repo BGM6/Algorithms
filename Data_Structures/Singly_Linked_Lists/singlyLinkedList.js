@@ -31,12 +31,43 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
+
+    //pop Method - remove the last node from the tail;
+    pop() {
+        //if there is no head return undefined
+        if (!this.head) return undefined;
+//need current to start at the head and tail to equal current
+        let current = this.head;
+        let newTail = current;
+//while there is still a current;
+        while (current) {
+// newTail === current and current === current.next;
+            newTail = current;
+            current = current.next;
+        }
+//if the while loop ends
+//set this.tail to newTail
+        this.tail = newTail;
+        //We need to remove the old tail by setting next tail to null/ this.tail.next === null
+        this.tail.next = null;
+        //then we need to decrement the length
+        this.length--;
+//check if the length is === 0 then set the head and the tail to null;
+        if (this.length === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+//return current;
+        return current;
+    }
 }
 
 let list = new SinglyLinkedList();
-list.push('firstNode')
-list.push('secNode')
-console.log(list)
+list.push('firstNode');
+list.push('secNode');
+list.push('thirdNode');
+list.pop();
+console.log(list);
 
 //Not ideal way of doing this
 // let first = new Node('Hi');
