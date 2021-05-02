@@ -89,12 +89,13 @@ class SinglyLinkedList {
         if (!this.head) {
             this.head = newNode;
             this.tail = this.head;
+        } else {
+            //Otherwise set the newly created node's next property to be the current head property on the list
+            newNode.next = this.head;
+            //Set the head property on the list to be the newly created node
+            this.head = newNode;
+            //Increment the length of the list by 1
         }
-        //Otherwise set the newly created node's next property to be the current head property on the list
-        newNode.next = this.head;
-        //Set the head property on the list to be the newly created node
-        this.head = newNode;
-        //Increment the length of the list by 1
         this.length++;
         //return the linked list
         return this;
