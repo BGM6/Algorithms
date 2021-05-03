@@ -137,8 +137,8 @@ class SinglyLinkedList {
         //If the index is 0; unshift a new node to the start of the list
         if (index === 0) return !!this.unshift(val);
         //Otherwise, using the get method, access the node at the index - 1
-         let newNode = new Node(val);
-         let prevNode = this.get(index - 1);
+        let newNode = new Node(val);
+        let prevNode = this.get(index - 1);
         //Set the next property on that node to be the new node
         //Set the next property on the new node to be the previous next
         let tempNode = prevNode.next;
@@ -150,7 +150,38 @@ class SinglyLinkedList {
         return true;
     }
 
-
+    //Remove method
+    remove(index) {
+        //If the index is less than zero or greater than the length, return undefined
+        if (index < 0 || index >= this.length) return undefined;
+        //if the index is the same as the length - 1, pop
+        if (index === this.length - 1) return !!this.pop();
+        //if the index is 0, shift
+        if (index === 0) return !!this.shift();
+        //otherwise, using the get method, access the node at the index - 1
+        let prevNode = this.get(index - 1);
+        //set the next property on that node to be the next of the next node
+        let removed = prevNode.next;
+        prevNode.next = removed.next;
+        //decrement the length;
+        this.length--;
+        //return the value of the node removed
+        return removed;
+    }
+    reverse() {
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        let next ;
+        let prev = null;
+        for(let i = 0; i < this.length; i++) {
+            next = node.next
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
+    }
 }
 
 let list = new SinglyLinkedList();
