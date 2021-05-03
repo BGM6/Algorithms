@@ -100,16 +100,71 @@ class SinglyLinkedList {
         //return the linked list
         return this;
     }
+
+    get(index) {
+        //this function should accept an index
+        //If the index is less than zero or greater than or equal to the length of the list, return null;
+        if (index < 0 || index >= this.length) return undefined;
+        //loop through the list until you reach the index and return the node at the specific index
+        let counter = 0;
+        let current = this.head;
+        while (counter !== index) {
+            current = current.next;
+            counter++;
+        }
+        return current;
+    }
+
+    //SET METHOD
+    //this function should accept a value and an index
+    set(index, val) {
+        //Use your get function to find the specific node
+        let foundNode = this.get(index);
+        //if the node is found, set the value of the node to be the value passed to the function and return true
+        if (foundNode) {
+            foundNode.val = val;
+            return true;
+        }         //if the node is not found, return false;
+        return false;
+    }
+
+    //Insert inserts a node between two nodes
+    insert(index, val) {
+        //if the index is less than zero or greater than the length, return false
+        if (index < 0 || index > this.length) return false;
+        //if the index is the same as the length, push a new node to the end of the list
+        if (index === this.length) return !!this.push(val);
+        //If the index is 0; unshift a new node to the start of the list
+        if (index === 0) return !!this.unshift(val);
+        //Otherwise, using the get method, access the node at the index - 1
+         let newNode = new Node(val);
+         let prevNode = this.get(index - 1);
+        //Set the next property on that node to be the new node
+        //Set the next property on the new node to be the previous next
+        let tempNode = prevNode.next;
+        prevNode.next = newNode;
+        newNode.next = tempNode;
+        //increment the length
+        this.length++;
+        //return true
+        return true;
+    }
+
+
 }
 
 let list = new SinglyLinkedList();
 list.push('firstNode');
 list.push('secNode');
-list.shift();
+list.push('thirdNode');
+list.push(46546);
+list.push(564556);
+list.set(0, 'Changed!');
+// console.log(list.get(0));
 // list.push('thirdNode');
 // list.pop();
 // list.pop();
-console.log(list);
+
 
 //Not ideal way of doing this
 // let first = new Node('Hi');
@@ -117,5 +172,3 @@ console.log(list);
 // first.next.next = new Node('how')
 // first.next.next.next = new Node('are')
 // first.next.next.next.next = new Node('you?')
-
-// console.log(first);
