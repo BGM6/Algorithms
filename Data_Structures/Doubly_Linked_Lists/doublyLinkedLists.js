@@ -135,7 +135,7 @@ class DoublyLinkedList {
 
     insert(index, val) {
         //if the index is less than zero or greater than or equal to the length return false
-        if (index < 0 || index >= this.length) return false;
+        if (index < 0 || index > this.length) return false;
         //if the index is 0, unshift;
         if (index === 0) return !!this.unshift(val);
         //if the index is the same as the length, push
@@ -149,15 +149,31 @@ class DoublyLinkedList {
         newNode.prev = beforeNode;
         newNode.next = afterNode;
         afterNode.prev = newNode;
-        this.length++;
-        return true;
         //increment the length
+        this.length++;
         //return true;
-
+        return true;
     }
 
     remove(index) {
-
+        //if the index is less than zero or greater than or equal to the length return undefined
+        if (index < 0 || index >= this.length) return false;
+        //if the index is 0, shift
+        if (index === 0) return this.shift();
+        //if the index is the same as the length  - 1, pop
+        if (index === this.length - 1) return this.pop();
+        //use the get method to retrieve the item to be removed
+        let removeNode = this.get(index);
+        //update the next and prev properties ot remove the found node from the list
+        removeNode.prev.next = removeNode.next;
+        removeNode.next.prev = removeNode.prev;
+        //set next and prev to null on the found node
+        removeNode.next = null;
+        removeNode.prev = null;
+        //decrement the length
+        this.length--;
+        //return the removed node
+        return removeNode;
     }
 
 }
