@@ -1,0 +1,8 @@
+Stacks - LIFO - last in first out
+
+Like the call stack
+The last in added is the first one to be removed
+
+Stacks are used in managing functions
+EX: Photoshop/Lightroom
+The latest edit you did will be the first thing to be undone when deleting action
