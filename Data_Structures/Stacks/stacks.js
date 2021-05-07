@@ -49,23 +49,29 @@ class Stack {
 	//if there are no nodes in the stack, return null
 	if (!this.first) return undefined;
 	//create a temp var to store the first property on the stack
+	//if there is only 1 node, set the first and last property to be null
 	let currentFirst = this.first;
 	if (this.first === this.last) {
 	  this.last = null;
 	}
-	//if there is only 1 node, set the first and last property to be null
-	this.first = this.first.next;
-	this.size--;
-	return currentFirst.value;
 	//if there is more than one node, set the first property to be
 	// the next property on the current first
+	this.first = this.first.next;
+	//decrement size
+	this.size--;
+	//return currentFirst value;
+	return currentFirst.value;
+
   }
 }
 
 let list = new Stack();
-list.frontPush('first');
+list.frontPush('first');//tail
 list.frontPush('second');
-
+list.frontPush('third');  //head
+// console.log(list);
+const res = list.frontPop();
+console.log(res);
 console.log(list);
 
 
