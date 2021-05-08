@@ -1,0 +1,17 @@
+TO MUTATE ORIGINAL ARRAY
+[.push, .unshift, .pop, .shift, .unshift, .splice, .reverse, .sort, .fill]
+
+A NEW ARRAY
+[.map, .filter, .slice, .concat, .flat, .flatMap]
+
+AN ARRAY INDEX
+[.indexOff, .findIndex, .find]
+
+KNOW IF ARRAY INCLUDES
+[.includes, .some, .every, .join]
+
+TO TRANSFORM TO A VALUE
+[.reduce]
+
+TO JUST LOOP ARRAY IF WE DONT NEED TO PRODUCE A NEW VALUE
+[.forEach]
