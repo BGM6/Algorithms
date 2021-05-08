@@ -218,7 +218,40 @@ const lessThan500 =
 //          { deposits: 0, withdrawals: 0 }
 //     );
 
+const {deposits, withdrawals} =
+    accounts.flatMap(acc => acc.movements)
+        .reduce((sums, curNum) => {
+                sums[curNum > 0 ? 'deposits' : 'withdrawals'] += curNum;
+                return sums;
+            }, {deposits: 0, withdrawals: 0}
+        );
+console.log(deposits, withdrawals);
 
+// 4.
+// this is a nice title -> This Is a Nice Title
+// const convertTitleCase = function (title) {
+//     const capitalize = str => str[0].toUpperCase() + str.slice(1);
+//     const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+//     const titleCase = title
+//         .toLowerCase()
+//         .split(' ')
+//         .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+//         .join(' ');
+//     return capitalize(titleCase);
+// };
+
+const covertTitleCase = title => {
+    const capitalize = str => str[0].toUpperCase() + str.slice(1);
+    const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+    const titleCase = title
+        .toLowerCase()
+        .split(' ')
+        .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+        .join(' ');
+    return capitalize(titleCase);
+};
+
+console.log(covertTitleCase('the cat in the hat'));
 
 
 
