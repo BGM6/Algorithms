@@ -28,7 +28,6 @@ const account4 = {
     pin: 4444,
 };
 
-//MAP
 const accounts = [account1, account2, account3, account4];
 
 const createUsernames = function (accs) {
