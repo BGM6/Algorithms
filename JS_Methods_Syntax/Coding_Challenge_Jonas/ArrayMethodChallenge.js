@@ -250,7 +250,6 @@ const covertTitleCase = title => {
         .join(' ');
     return capitalize(titleCase);
 };
-
 console.log(covertTitleCase('the cat in the hat'));
 
 

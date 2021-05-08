@@ -1,8 +1,14 @@
 'use strict';
+const solve = (strArg) => {
+    const hash = {};
+    for (let char of strArg) {
+        hash[char] ? hash[char]++ : hash[char] = 1;
+    }
+    for (let val of Object.values(hash)) {
+        if (val % 2 === 1) return false;
+    }
+    return true;
+};
 
-const upperFirstWord = function(str) {
-    const [first,...others] = str.split(' ');
-    return [first.toUpperCase(), ...others ].join(' ');
-}
-
-console.log(upperFirstWord('hello world'))
+const res = solve('aabbccdd');
+console.log(res);
