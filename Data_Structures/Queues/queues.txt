@@ -1,0 +1,2 @@
+Queues are FIFO
+First in first out. Like people in line.

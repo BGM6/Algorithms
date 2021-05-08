@@ -42,7 +42,7 @@ class Stack {
 	//reset the first property to be the newly created node
 	//set the next property on the node to be the previously created variable
 	//increment the size of the stack by 1
-	return this.size++;
+	return ++this.size;
   }
 
   frontPop() {
