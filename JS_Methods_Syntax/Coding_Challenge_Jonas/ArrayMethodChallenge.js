@@ -250,7 +250,24 @@ const covertTitleCase = title => {
         .join(' ');
     return capitalize(titleCase);
 };
-console.log(covertTitleCase('the cat in the hat'));
+// console.log(covertTitleCase('the cat in the hat'));
 
+//=====================================================================================================================
+const dogs = [
+    { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+    { weight: 8, curFood: 200, owners: ['Matilda'] },
+    { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+    { weight: 32, curFood: 340, owners: ['Michael'] },
+];
 
-
+dogs.forEach(dog => (dog.recFood = Math.floor(dog.weight ** 0.75 * 28)))
+const sarahDog = dogs.find(dog => dog.owners.includes('Sarah'))
+console.log(`
+Sarah\'s dog is eating ${sarahDog.curFood > sarahDog.recFood ? 'too much' : 'Too little'}.
+`)
+// 3. Create an array containing all owners of dogs who eat too much ('ownersEatTooMuch') and an array with all owners of dogs who eat too little ('ownersEatTooLittle').
+// 4. Log a string to the console for each array created in 3., like this: "Matilda and Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat too little!"
+// 5. Log to the console whether there is any dog eating EXACTLY the amount of food that is recommended (just true or false)
+// 6. Log to the console whether there is any dog eating an OKAY amount of food (just true or false)
+// 7. Create an array containing the dogs that are eating an OKAY amount of food (try to reuse the condition used in 6.)
+// 8. Create a shallow copy of the dogs array and sort it by recommended food portion in an ascending order (keep in mind that the portions are inside the array's objects)
