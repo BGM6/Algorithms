@@ -1,4 +1,3 @@
-
 class Node {
     constructor(val) {
         this.val = val;
@@ -75,6 +74,7 @@ class BinarySearchTree {
         }
         return false;
     }
+
     //Searching from horizontally
     //Using a queue First in first Out use pop and unshift.
     BFS() {
@@ -90,6 +90,55 @@ class BinarySearchTree {
         }
         return data;
     }
+
+    //Depth first Search PreOrder
+    //Start at the root, traverse the left until there is none. Then traverse the right side of the lefts
+    //Then traverse the right side starting of the root and the the same thing until there is no node left.
+    //This uses recursion
+    DFSPreOrder() {
+        let data = [];
+        let current = this.root;
+
+        function traverse(node) {
+            data.push(node.val);
+            if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
+        }
+
+        traverse(current);
+        return data;
+    }
+
+    //Depth first Search PostOrder
+    //explores all children nodes before added the root
+    //goes all the way to the left then all the way to the right. Adds on the way up
+    DFSPostOrder() {
+        let data = [];
+        let current = this.root;
+        function traverse(node) {
+            if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
+            data.push(node.val);
+        }
+
+        traverse(current);
+        return data;
+    }
+    //
+    DFSInOrder() {
+        let data = [];
+        let current = this.root;
+        function traverse(node) {
+            if (node.left) traverse(node.left);
+            data.push(node.val);
+            if (node.right) traverse(node.right);
+
+        }
+
+        traverse(current);
+        return data;
+    }
+
 }
 
 let tree = new BinarySearchTree();
@@ -100,4 +149,11 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 
+/*
+         10
+      6     15
+   3   8       20
+*/
 console.log(tree.BFS())
+// console.log(tree.DFSPostOrder());
+// console.log(tree.DFSInOrder());
