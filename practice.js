@@ -1,94 +1,55 @@
-'use strict';
-const solve = (arr) => {
-    return arr.map(word => word.toLowerCase().split('').sort().join('')).every((word, _, arr) => word === arr[0])
-};
-const res = solve(['listen', 'silent']);
-console.log(res);
+//MaxBinaryHeap
+//the parent element must always be larger than the child nodes
+//two nodes per parent
+//no particular order to follow
+/*
+                100
+     50      60    40     70
+    2  3  21   2  4  5  6     7
+*/
 
 
-//
-// const account1 = {
-//     owner: 'Jonas Schmedtmann',
-//     movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
-//     interestRate: 1.2, // %
-//     pin: 1111,
-// };
-//
-// const account2 = {
-//     owner: 'Jessica Davis',
-//     movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
-//     interestRate: 1.5,
-//     pin: 2222,
-// };
-//
-// const account3 = {
-//     owner: 'Steven Thomas Williams',
-//     movements: [200, -200, 340, -300, -20, 50, 400, -460],
-//     interestRate: 0.7,
-//     pin: 3333,
-// };
-//
-// const account4 = {
-//     owner: 'Sarah Smith',
-//     movements: [430, 1000, 700, 50, 90],
-//     interestRate: 1,
-//     pin: 4444,
-// };
-//
-// const accounts = [account1, account2, account3, account4];
-// // const convertTitleCase = title => {
-// //     const capitalizeFirstLetter = str => str[0].toUpperCase() + str.slice(1);
-// //     const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
-// //     const titleCase = title
-// //         .toLowerCase()
-// //         .split(' ')
-// //         .map(word => exceptions.includes(word) ? word : capitalizeFirstLetter(word))
-// //         .join(' ');
-// //     return capitalizeFirstLetter(titleCase);
-// // };
-//
-//
-// // console.log(convertTitleCase('the cat in the hat')); //'The Cat in the Hat
-//
-// //1. cal the sum of all deposits of all accounts
-// const allDeposits = accounts.flatMap(acc => acc.movements)
-//     .filter(mov => mov > 0);
-// console.log(allDeposits);
-// //2. search for how many deposits 1000 or more
-// const amt1000 = accounts.map(acc => acc.movements)
-//     .flat()
-//     .filter(mov => mov >= 1000);
-// // console.log(amt1000)
-// // 3. Create a new object with deposits and withdrawals
-// // const {d, w} = accounts.flatMap(acc => acc.movements)
-// //     .reduce((sums, currentNum) => {
-// //         if (currentNum > 0) sums.d += currentNum;
-// //         else sums.w += currentNum;
-// //         return sums;
-// //     }, {d: 0, w: 0});
-//
-// // const {d, w} = accounts.flatMap(acc => acc['movements'])
-// //     .reduce((sums, currentNum) => {
-// //         currentNum > 0 ? (sums.d += currentNum) : (sums.w += currentNum);
-// //         return sums;
-// //     }, {w: 0, d: 0});
-//
-// // const {d, w} = accounts.flatMap(acc => acc.movements)
-// //     .reduce((sums, currentNum) => {
-// //         sums[currentNum > 0 ? 'd' : 'w'] += currentNum;
-// //         return sums;
-// //     }, {d: 0, w: 0});
-// // console.log(d, w);
-//
-// const convertTitleCase = title => {
-//     const capitalizeFirstLetter = str => str[0].toUpperCase() + str.slice(1);
-//     const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
-//     const caseTitle = title
-//         .toLowerCase()
-//         .split(' ')
-//         .map(word => exceptions.includes(word) ? word : capitalizeFirstLetter(word))
-//         .join(' ');
-//     return capitalizeFirstLetter(caseTitle);
-// };
-//
-// console.log(convertTitleCase('the cat IN The hAt'));
+class MaxBinaryHeap {
+    constructor() {
+        this.values = [];
+    }
+
+    insert(element) {
+        //pushes the element at the end of the list
+        this.values.push(element);
+        //bubbleUP function to place the element in the correct location
+        this.bubbleUp();
+    }
+
+    bubbleUp() {
+        //set index to be the length of the list
+        let index = this.values.length - 1;
+        const element = this.values[index];
+        while (index > 0) {
+            let parentIndex = Math.floor((index - 1) / 2);
+            let parentEl = this.values[parentIndex];
+            //we only swap if the element is greater than the parent
+            if(element <= parent) break;
+            //else swap the element with the parent
+            //parent spot swap with the element we pushed
+            this.values[parentIndex] = element;
+            //element index we pushed === parent index
+            this.values[index] = parentEl;
+            //this line moves the index which starts at the end of the list to where the
+            //parent is
+            index = parentIndex
+        }
+    }
+}
+
+//[41,39,33,18,27,12]
+
+let heap = new MaxBinaryHeap();
+heap.insert(41);
+heap.insert(39);
+heap.insert(33);
+heap.insert(18);
+heap.insert(27);
+heap.insert(12);
+console.log(heap);
+
