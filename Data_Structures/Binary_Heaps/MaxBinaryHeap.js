@@ -4,6 +4,11 @@ Very similar to a binary search tree, but with some different rules!
 In a MaxBinaryHeap = parent nodes are always larger tan child nodes.
 In a MinBinaryHeap = parent nodes are always smaller than child nodes
 
+*Binary Heaps are very useful data structures for sorting, and implementing other data structures like priority queues
+* Binary heaps are either MaxBinaryHeaps or MinBinaryHeaps with parents either being smaller or larger than their children
+*filled out from left to right
+*With just a little bit of math, we can represent heaps using arrays
+
 *Each nodes can only have 2 child nodes
 *There is no order with the left and right they are just smaller than the parent node
 
