@@ -1,0 +1,43 @@
+What are graphs used for?
+
+-The internet, your your facebook friends, IG friends.
+-GPS, roads on the map connect to each other. A bunch of nodes connected by roads
+-Recommendations use graphs
+    'people also watched'
+    'you might also like'
+    'people you might know'
+    'frequently bought with'
+
+Terms to know
+*Vortex = a node
+*Edge = connection between nodes
+*Weighted/Unweighted = values assigned to distances
+*Directed/Undirected = directions assigned to distanced between vertices
+
+Types of Graphs
+-Undirected Graph
+    There is no directions on the edge there is no forward or backwards.
+    There is no polarity. It can go either way.
+    Example: Facebook friends. I can see my friends content they can see mine.
+
+-Directed Graph
+    There is a direction assigned to the edge. You can only go that way can't go back
+    Example: Instagram - I follow Rihanna I can see her content. She doesn't follow me she cant see my content.
+
+-Weighted Graphs
+    Weighted graphs have values on the edges
+    Example: Maps showing distance from vertex to vertex. That shows value on the edge
+
+-Unweighted Graphs
+    Have no values on the edges
+    Example: Facebook, Instagram.
+
+
+//Adjacency Matrix
+        Takes up more Space in sparse graphs
+        Slower to iterate over all edges
+        Faster to lookup specific edge
+//Adjacency List - can use an array to store or a hash table;
+        Can take up less space in sparse graphs
+        Faster to iterate over all edges
+        Can be slower to lookup Specific edge
