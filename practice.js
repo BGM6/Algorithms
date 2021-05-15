@@ -24,23 +24,7 @@
 //   return [...parentArr, childArr]
 // };
 
-const solve = (intArr, number) => {
-  let tempSum = 0;
-  let max = 0;
-  for (let i = 0; i <= number; i++) {
-	max += i;
-  }
-  tempSum = max;
-  for (let j = number; j < intArr.length; j++) {
-	tempSum = tempSum - intArr[j - number] + intArr[j];
-	max = Math.max(max, tempSum);
-  }
-  return max;
-};
 
-
-const res = solve([1, 2, 3, 4, 5, 5], 2); //10
-console.log(res);
 // class MaxBinaryHeap {
 //     constructor() {
 //         this.values = [];
@@ -85,3 +69,35 @@ console.log(res);
 // heap.insert(12);
 // console.log(heap);
 
+// const binarySearch = (arr, n) => {
+//     let left = 0;
+//     let right = arr.length - 1;
+//     let middle = Math.floor((left + right) / 2);
+//     while (arr[middle] !== n && left <= right) {
+//         if (arr[middle] > n) right = middle - 1;
+//         else left = middle + 1;
+//         middle = Math.floor((left + right) / 2);
+//     }
+//     return arr[middle] === n ? middle : -1;
+// };
+
+// const res = binarySearch([2, 4, 5, 10, 14, 15, 20, 33], 4);
+// console.log(res);
+
+// const rev = function(arr) {
+//     let revArr = [];
+//     for(let i = arr.length - 1; i >= 0; i--) {
+//         let num = arr[i];
+//         revArr.push(num);
+//     }
+//     return revArr;
+// }
+
+const rev = arr =>
+    arr.reduceRight((revArr, num) => {
+        revArr.push(num)
+        return revArr;
+    }, [])
+
+const res = rev([1,2,3,4,5]);
+console.log(res);
