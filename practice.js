@@ -93,11 +93,3 @@
 //     return revArr;
 // }
 
-const rev = arr =>
-    arr.reduceRight((revArr, num) => {
-        revArr.push(num)
-        return revArr;
-    }, [])
-
-const res = rev([1,2,3,4,5]);
-console.log(res);

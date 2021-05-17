@@ -1,14 +1,15 @@
 function insertionSort(arr) {
   for(let i = 1; i < arr.length; i++) {
+  	let j;
 	let currentVal = arr[i];
-	for(var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+	for(j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
 	  arr[j+1] = arr[j];
 	}
 	arr[j+1] = currentVal;
   }
   return arr;
 }
-
+const res = insertionSort([5, 3, 1, 4, 6])
 /*
 We loop through the arr starting at 1 through the length of the arr
 Create a var called currentNumber equal to the value of the current iteration
